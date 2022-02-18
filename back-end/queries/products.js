@@ -24,6 +24,7 @@ const createProduct = async (product) =>{
             "INSERT INTO products(name, image, weight, price, in_stock) VALUES ($1,$2,$3,$4,$5) RETURNING *",
             [product.name, product.image, product.weight, product.price, product.in_stock]
         )
+        return newProduct;
     }catch(err){
         return err;
     }
