@@ -18,17 +18,21 @@ function AllProducts() {
 
   let productList = products.map((product, index)=>{
     return (
-      <div key={index} className="Product" >
+      <article key={index} className="Product" >
         <img src={product.image} alt={product.name}></img>
-        <Link to={`/products/${product.id}`}><h3>{product.name} Details</h3></Link>
+        <Link to={`/products/${product.id}`}><h3>{product.description}</h3></Link>
 
-      </div>
+      </article>
     )
   })
 
   return (
-    <div className="Products">
-      {productList}
+    <div >
+      <div className="buttons"><button>Sort by Featured</button>
+            <button>Sort By Price</button>
+            <button> View Cart</button>
+      </div>
+      <div className="Products">{productList}</div>
     </div>
   );
 }
