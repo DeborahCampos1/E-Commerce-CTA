@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { currencyFormatter } from "./Utility";
+
 const API = process.env.REACT_APP_API_URL;
 
 function ProductDetails() {
@@ -29,15 +31,17 @@ function ProductDetails() {
 
     return (
       <article className="details">
-          <h1> Featured Product: {product.featured ? <span>⭐️</span> : "No" } <span>In Stock? {product.in_stock ? "Yes" : "Out of Stock"} </span></h1>
-          <h1>{product.name} {product.description}</h1>
+        <div>
+          <h1>{product.description}</h1>
+        </div>
           <img src={product.image}alt={product.description}></img>
           <p>
+          <h2>Price: {currencyFormatter.format(product.price)} USD</h2>
+          <h1> Featured Product: {product.featured ? <span>⭐️</span> : "No" } | <span>{product.in_stock ? "In Stock" : "Out of Stock"} </span></h1>
             <h3>Product Weight: {product.weight} Oz</h3>
-            <h3>Price: {product.price} USD</h3>
             <h3>Rating: {product.rating}</h3>
           </p>
-        <button onClick={handleDelete}> Delete Product </button>
+        <button onClick={handleDelete}> Delete </button>
         <button><Link to={`/products/${id}/edit`}>Edit</Link></button>
         <button>Add To Cart</button>
         <h3><Link to="/products"> Back to All Products</Link></h3>

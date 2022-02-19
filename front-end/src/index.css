@@ -1,20 +1,28 @@
 body{ 
-    background-color: rgb(206, 196, 179);}
-
+    background: linear-gradient( #b4a28de5, #9094ad);
+    /* background-color: rgb(206, 196, 179);} */
+}
 #nav{
     display: flex;
     background-color: aliceblue;
     justify-content: space-around;
     align-items: center;
     padding: 2em 2em;
-    width: 60%;
+    width: 75%;
     margin: auto;
-    border: solid 25px rgb(133, 132, 132);
+    border: solid 25px #64615ee5;
 }
 #nav a{
-    /* text-decoration: none; */
-    color: rgb(58, 57, 57);
+    text-decoration: none;
+    color: rgb(22, 20, 20);
     font-size: 0.75em;
+    /* border: 3px solid  #64615ee5; */
+    padding:10px;
+    /* background-color: #a59381e5; */
+}
+#nav a:hover{
+  color:rgb(255, 253, 240);
+  border: 4px solid rgb(179, 189, 206);
 }
 .shimmer{
     font-family: "Lato";
@@ -40,9 +48,9 @@ body{
     -webkit-animation-name: shimmer;
     -moz-animation-name: shimmer;
     animation-name: shimmer;
-    -webkit-animation-duration: 3s;
-    -moz-animation-duration: 3s;
-    animation-duration: 3s;
+    -webkit-animation-duration: 2.5s;
+    -moz-animation-duration: 1s;
+    animation-duration: 2.5s;
     -webkit-animation-iteration-count: infinite;
     -moz-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
@@ -90,47 +98,63 @@ main{
 .Products img{
     width: 350px;
     height: 250px;
+    /* border-radius: 70%; */
 }
 .Products{
     display: flex;
     text-align: center;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 1em;
     gap: 10px;
-    border: 2px solid rgb(128, 125, 125);
+    /* border: 1px solid rgb(128, 125, 125); */
     
 }
 .Product{
-    border: solid 3px black;
+    border: solid 1px rgb(46, 52, 58);
+    border-radius: 12px;
     padding: 2px;
-    background-color: aliceblue;
+    gap: 1px;
+    background-color: rgb(179, 189, 206);
 }
 .buttons{
+  /* background-color: rgb(179, 189, 206); */
     display: flex;
     text-align: center;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 1em;
-    gap: 10px;
-    border: 2px solid silver;
+    gap: 50px;
+    align-items: center;
+    /* border: 1px solid rgb(46, 52, 58); */
 }
 .buttons button{
     height:35px;
     width: 150px;
+    border: 0.20em solid rgb(46, 52, 58); 
+    border-radius: 6px;
 }
 .details{
   text-align: center;
 }
 .details button{
+  border: .5px solid rgb(46, 52, 58);
   margin: 5px;
-  width: 150px;
-  height: 40px;
+  width: 100px;
+  height: 35px;
+  border-radius: 6px;
+  background-color:aliceblue;
 }
 
 .details img{
-  border: 1px solid black;
+  border-radius: 12px;
+  border: 2px solid rgb(46, 52, 58);
   width: 550px;
+}
+.details h2 {
+  color:rgb(40, 99, 153)
+}
+.details h1:hover{
+  color:rgb(255, 253, 240);
 }
 
 .login{
@@ -139,4 +163,22 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.description{
+  align-items: center;
+  /* text-align: left; */
+}
+.description a{
+  color:rgb(10, 13, 17)
+}
+.description a:hover{
+  color:aliceblue;
+}
+.Product h3:hover{
+  color:rgb(255, 253, 240);
+}
+.description button{
+  height: 25px;
+  width: 100px;
+  margin: 1px;
 }
