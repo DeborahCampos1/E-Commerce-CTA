@@ -30,8 +30,12 @@ function EditProduct() {
   const handleInputChange = (event) =>{
     setProduct({...product, [event.target.id]: event.target.value })
   }
-  const handleCheckboxChange = () =>{
-    setProduct({...product, in_stock: !product.in_stock, featured: !product.featured})
+  // const handleCheckboxChange = () =>{
+    
+  //   setProduct({...product, featured: !product.featured})
+  // }
+  const handleCheckChange = () =>{
+    setProduct({...product, in_stock: !product.in_stock})
   }
   const handleSubmit = (event) =>{
     event.preventDefault();
@@ -100,20 +104,18 @@ function EditProduct() {
           placeholder="Rating 1-5"
           required
           />
-          <label htmlFor="featured">FEatured Product? </label>
+          {/* <label htmlFor="featured">Featured Product? </label>
           <input
           id="featured"
-          value={product.featured}
           type="checkbox"
           onChange={handleCheckboxChange}
           checked={product.featured}
-          />
+          /> */}
           <label htmlFor="in_stock">Product in Stock? </label>
           <input
           id="in_stock"
-          value={product.in_stock}
           type="checkbox"
-          onChange={handleCheckboxChange}
+          onChange={handleCheckChange}
           checked={product.in_stock}
           />
           <input type="submit" />
