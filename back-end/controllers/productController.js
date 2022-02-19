@@ -47,12 +47,12 @@ products.post("/", async (req,res)=>{
 
 products.put("/:id", async (req,res)=>{
     const { id } = req.params;
-    let { body } = req;
+    const { body } = req;
 
     try{
-        const updatedProduct = await updateProduct(id, body);
-        if (updatedProduct.id){
-            res.status(200).json(updatedProduct)
+        const uProduct = await updateProduct(id, body);
+        if(uProduct.id){
+            res.status(200).json(uProduct)
         }else{
             res.status(404).json({error: "Unable to update product."})
         }
