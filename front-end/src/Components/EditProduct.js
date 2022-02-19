@@ -8,7 +8,7 @@ function EditProduct() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const[product, setProduct]= useState({
+  const [product, setProduct]= useState({
     name: "",
     description: "",
     image: "",
@@ -30,16 +30,17 @@ function EditProduct() {
   const handleInputChange = (event) =>{
     setProduct({...product, [event.target.id]: event.target.value })
   }
-  // const handleCheckboxChange = () =>{
+  const handleCheckboxChange = () =>{
     
-  //   setProduct({...product, featured: !product.featured})
-  // }
+    setProduct({...product, featured: !product.featured})
+  }
   const handleCheckChange = () =>{
     setProduct({...product, in_stock: !product.in_stock})
   }
+  
   const handleSubmit = (event) =>{
     event.preventDefault();
-
+    
     axios.put(`${API}/products/${id}`, product)
     .then(()=>{
       navigate("/products")
@@ -104,13 +105,13 @@ function EditProduct() {
           placeholder="Rating 1-5"
           required
           />
-          {/* <label htmlFor="featured">Featured Product? </label>
+          <label htmlFor="featured">Featured Product? </label>
           <input
           id="featured"
           type="checkbox"
           onChange={handleCheckboxChange}
           checked={product.featured}
-          /> */}
+          />
           <label htmlFor="in_stock">Product in Stock? </label>
           <input
           id="in_stock"

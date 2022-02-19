@@ -28,8 +28,6 @@ function AllProducts() {
           <h3>{product.name}</h3>
           <img src={product.image} alt={product.name}></img>
           <h3>{formatPrice(product.price)}</h3> 
-        
-        {/* <h3>{product.description}</h3> */}
         </article>
         <hr></hr>
       </div>
