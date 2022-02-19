@@ -22,7 +22,7 @@ function Cart ({products}){
             <h3>Subtotal: {cartContents.subtotal}</h3>
             {/* <h4>Tax: {cartContents.subtotal * 0.08}</h4>
             <h4>Total: {cartContents.subtotal * 1.08}</h4> */}
-            <h4><Link to="/products"> Back to All Products</Link></h4>
+            {/* <h4><Link to="/products"> Back to All Products</Link></h4> */}
 
         </div>
     

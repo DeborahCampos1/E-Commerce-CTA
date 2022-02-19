@@ -111,6 +111,7 @@ main{
 }
 .Product{
     border: solid 1px rgb(46, 52, 58);
+    /* height: 350px; */
     border-radius: 12px;
     padding: 2px;
     gap: 1px;
@@ -122,14 +123,14 @@ main{
     text-align: center;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 1em;
-    gap: 50px;
+    /* padding: 1em; */
+    /* gap: 50px; */
     align-items: center;
     /* border: 1px solid rgb(46, 52, 58); */
 }
 .buttons button{
-    height:35px;
-    width: 150px;
+    height:30px;
+    width: 120px;
     border: 0.20em solid rgb(46, 52, 58); 
     border-radius: 6px;
 }

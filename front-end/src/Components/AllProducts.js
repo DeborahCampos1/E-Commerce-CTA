@@ -25,7 +25,7 @@ function AllProducts() {
           <span><button className="">Add to Cart</button></span>
         </div>
         <article key={index} className="Product" >
-          <h3>{product.name}</h3><span></span>
+          <h3>{product.name}</h3>
           <img src={product.image} alt={product.name}></img>
           <h3>{formatPrice(product.price)}</h3> 
         
@@ -41,7 +41,7 @@ function AllProducts() {
       <div className="buttons"><button>Sort by Featured</button>
             <button>Sort By Price</button>
             <button> View Cart</button>
-            <Cart products={products}/>
+              <Cart products={products}/>
       </div>
       <hr></hr>
       <div className="Products">{productList}</div>
