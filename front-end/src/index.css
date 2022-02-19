@@ -95,8 +95,8 @@ main{
     display: grid;
     grid-template-columns: repeat(3, 1fr) ;
     text-align: center;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
     padding: 1em;
     gap: 10px;
     border: 2px solid rgb(128, 125, 125);
