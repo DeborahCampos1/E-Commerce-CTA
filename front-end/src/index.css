@@ -92,7 +92,8 @@ main{
     height: 250px;
 }
 .Products{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
     text-align: center;
     flex-wrap: wrap;
     justify-content: space-between;
