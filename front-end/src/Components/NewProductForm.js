@@ -34,6 +34,11 @@ function NewProduct() {
   const handleCheckChange = ()=>{
     setProduct({...product, in_stock: !product.in_stock})
   }
+  const handleCheckboxChange = () =>{
+    
+    setProduct({...product, featured: !product.featured})
+  }
+
   const handleSubmit = (e)=>{
     e.preventDefault()
 
@@ -44,7 +49,7 @@ function NewProduct() {
     return (
       <div className="new">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name: </label>
+        <label htmlFor="name"><h2>Name: </h2></label>
         <input
         id="name"
         value={product.name}
@@ -53,7 +58,7 @@ function NewProduct() {
         placeholder="Name of product..."
         required
         />
-        <label htmlFor="description">Description of product:</label>
+        <label htmlFor="description"><h2>Description of product:</h2></label>
         <input
         id="description"
         value={product.description}
@@ -62,7 +67,7 @@ function NewProduct() {
         placeholder="Description of product..."
         required
         />
-        <label htmlFor="image">Image URL:</label>
+        <label htmlFor="image"><h2>Image URL: </h2></label>
         <input
         id="image"
         value={product.image}
@@ -71,7 +76,7 @@ function NewProduct() {
         placeholder="http://..."
         required
         />
-        <label htmlFor="weight">Product Weight:</label>
+        <label htmlFor="weight"><h2>Product Weight:</h2></label>
         <input
         id="weight"
         value={product.weight}
@@ -80,7 +85,7 @@ function NewProduct() {
         placeholder="Item weight"
         required
         />
-        <label htmlFor="price">Price: </label>
+        <label htmlFor="price"><h2>Price: </h2></label>
         <input
         id="price"
         value={product.price}
@@ -89,7 +94,7 @@ function NewProduct() {
         placeholder="Product price"
         required
         />
-        <label htmlFor="rating">Rating 1-5:</label>
+        <label htmlFor="rating"><h2>Rating 1-5:</h2></label>
         <input
         id="rating"
         value={product.rating}
@@ -98,21 +103,21 @@ function NewProduct() {
         placeholder="Rating 1-5"
         required
         />
-        {/* <label htmlFor="featured">Featured Product? </label>
+        <label htmlFor="featured"><h2>Featured Product? </h2></label>
         <input
         id="featured"
         type="checkbox"
         onChange={handleCheckboxChange}
         checked={product.featured}
-        /> */}
-        <label htmlFor="in_stock">Product in Stock? </label>
+        />
+        <label htmlFor="in_stock"><h2>Product in Stock? </h2></label>
         <input
         id="in_stock"
         type="checkbox"
         onChange={handleCheckChange}
         checked={product.in_stock}
         />
-        <input type="submit" />
+        <button className="new" type="submit">Submit</button>
       </form>
       <h1><Link to={`/products/`}> Back </Link></h1>
     </div>

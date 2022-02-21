@@ -1,14 +1,22 @@
 body{ 
     background: linear-gradient( #b4a28de5, #9094ad);
-    /* background-color: rgb(206, 196, 179);} */
+}
+main{
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 #nav{
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     background-color: aliceblue;
     justify-content: space-around;
     align-items: center;
     padding: 2em 2em;
-    width: 75%;
+    width: 60%;
     margin: auto;
     border: solid 25px #64615ee5;
 }
@@ -16,9 +24,7 @@ body{
     text-decoration: none;
     color: rgb(22, 20, 20);
     font-size: 0.75em;
-    /* border: 3px solid  #64615ee5; */
     padding:10px;
-    /* background-color: #a59381e5; */
 }
 #nav a:hover{
   color:rgb(255, 253, 240);
@@ -91,14 +97,9 @@ body{
     }
   }
 
-main{
-    width: 60%;
-    margin: auto;
-}
 .Products img{
     width: 350px;
     height: 200px;
-    /* border-radius: 70%; */
 }
 .Products{
     display: flex;
@@ -106,27 +107,24 @@ main{
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 10px;
-    /* border: 1px solid rgb(128, 125, 125); */
-    
+    margin-top: 75px;
+    margin-bottom: 75px;
 }
 .Product{
-    border: solid 1px rgb(46, 52, 58);
-    /* height: 350px; */
+    border: solid 1px rgb(255, 253, 240);
     border-radius: 12px;
     padding: 2px;
     gap: 1px;
     background-color: rgb(179, 189, 206);
 }
 .buttons{
-  /* background-color: rgb(179, 189, 206); */
     display: flex;
     text-align: center;
     flex-wrap: wrap;
     justify-content: space-around;
-    /* padding: 1em; */
-    /* gap: 50px; */
+    padding-top: 0.5em;
+    gap: 50px;
     align-items: center;
-    /* border: 1px solid rgb(46, 52, 58); */
 }
 .buttons button{
     height:30px;
@@ -136,6 +134,11 @@ main{
 }
 .details{
   text-align: center;
+  margin-top:25px;
+  align-content: center;
+}
+.details:hover{
+  border:2px solid rgb(255, 253, 240);
 }
 .details button{
   border: .5px solid rgb(46, 52, 58);
@@ -147,12 +150,23 @@ main{
 }
 
 .details img{
+  display: flex;
+  margin: auto;
   border-radius: 12px;
-  border: 2px solid rgb(46, 52, 58);
+  border: 2px solid rgb(255, 253, 240);
   width: 550px;
 }
-.details h2 {
-  color:rgb(40, 99, 153)
+.details h2{
+  color:black;
+
+}
+.detail h1{
+  font-size: 2em;
+  padding: 5px;
+}
+.details h2:hover {
+  color: rgb(128, 225, 128);
+
 }
 .details h1:hover{
   color:rgb(255, 253, 240);
@@ -167,7 +181,6 @@ main{
 }
 .description{
   align-items: center;
-  /* text-align: left; */
 }
 .description a{
   color:rgb(10, 13, 17)
@@ -183,3 +196,46 @@ main{
   width: 100px;
   margin: 1px;
 }
+
+input[type],
+textarea {
+  height: 25px;
+  display: flex;
+  width: 300px;
+  margin: auto;
+  text-align: center;
+  font-size: large;
+  align-content: center;
+}
+.edit{
+  text-align: center;
+}
+.new{
+  text-align: center;
+}
+input[type="checkbox"] {
+  margin: auto;
+  width: 15%;
+  align-content: center;
+  margin-bottom: 15px;
+}
+
+button[type="submit"] {
+
+  height: 55px;
+  width: 35%;
+  margin: auto;
+  text-align: center;
+} 
+h2 a{
+  color: rgb(22, 20, 20);
+  padding: 10px;
+  width: 88%;
+  text-align: center;
+  margin: auto;
+}
+h2 a:hover{
+  color:rgb(255, 253, 240);
+  border: 4px solid rgb(179, 189, 206);
+}
+

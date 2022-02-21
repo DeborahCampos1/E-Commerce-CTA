@@ -31,8 +31,9 @@ function ProductDetails() {
 
     return (
       <article className="details">
-        <div>
+        <div className="detail">
           <h1>{product.description}</h1>
+        <button>Add To Cart</button>
         </div>
           <img src={product.image}alt={product.description}></img>
           <p>
@@ -43,7 +44,6 @@ function ProductDetails() {
           </p>
         <button onClick={handleDelete}> Delete </button>
         <button><Link to={`/products/${id}/edit`}>Edit</Link></button>
-        <button>Add To Cart</button>
         <h3><Link to="/products"> Back to All Products</Link></h3>
       </article>
     );

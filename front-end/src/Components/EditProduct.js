@@ -51,7 +51,7 @@ function EditProduct() {
     return (
       <div className="edit">
         <form onSubmit={handleSubmit}>
-          <label htmlFor="name"></label>
+          <label htmlFor="name"><h2>Edit Item: </h2></label>
           <input
           id="name"
           value={product.name}
@@ -60,7 +60,8 @@ function EditProduct() {
           placeholder="Name of product..."
           required
           />
-          <label htmlFor="description"></label>
+          <br></br>
+          <label htmlFor="description"><h2>Description: </h2></label>
           <input
           id="description"
           value={product.description}
@@ -69,7 +70,7 @@ function EditProduct() {
           placeholder="Description of product..."
           required
           />
-          <label htmlFor="image"></label>
+          <label htmlFor="image"><h2>Image URL: </h2></label>
           <input
           id="image"
           value={product.image}
@@ -78,7 +79,7 @@ function EditProduct() {
           placeholder="http://..."
           required
           />
-          <label htmlFor="weight"></label>
+          <label htmlFor="weight"><h2>Oz: </h2></label>
           <input
           id="weight"
           value={product.weight}
@@ -87,7 +88,7 @@ function EditProduct() {
           placeholder="Item weight"
           required
           />
-          <label htmlFor="price"></label>
+          <label htmlFor="price"><h2>Price: </h2></label>
           <input
           id="price"
           value={product.price}
@@ -96,7 +97,7 @@ function EditProduct() {
           placeholder="Product price"
           required
           />
-          <label htmlFor="rating"></label>
+          <label htmlFor="rating"><h2>Rating: </h2></label>
           <input
           id="rating"
           value={product.rating}
@@ -105,23 +106,23 @@ function EditProduct() {
           placeholder="Rating 1-5"
           required
           />
-          <label htmlFor="featured">Featured Product? </label>
+          <label htmlFor="featured"><h2>Featured Product: </h2></label>
           <input
           id="featured"
           type="checkbox"
           onChange={handleCheckboxChange}
           checked={product.featured}
           />
-          <label htmlFor="in_stock">Product in Stock? </label>
+          <label htmlFor="in_stock"><h2>Product in Stock: </h2></label>
           <input
           id="in_stock"
           type="checkbox"
           onChange={handleCheckChange}
           checked={product.in_stock}
           />
-          <input type="submit" />
+          <button type="submit"><h4>SUBMIT</h4></button>
+        <h2><Link to={`/products/${id}`}>Cancel Edit</Link></h2>
         </form>
-        <h1><Link to={`/products/${id}`}> Cancel Edit </Link></h1>
       </div>
     );
   }
