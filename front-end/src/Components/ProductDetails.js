@@ -34,6 +34,7 @@ function ProductDetails() {
       <article className="details">
         <div className="detail">
           <h1>{product.description}</h1>
+          <h1> Featured Product: {product.featured ? <span>⭐️</span> : "No" } | <span>{product.in_stock ? "In Stock" : "Out of Stock"} </span></h1>
         <button>Add To Cart</button>
         </div>
         <aside>
@@ -42,7 +43,6 @@ function ProductDetails() {
           <img src={product.image}alt={product.description}></img>
           <div>
           <h2>Price: {currencyFormatter.format(product.price)} USD</h2>
-          <h1> Featured Product: {product.featured ? <span>⭐️</span> : "No" } | <span>{product.in_stock ? "In Stock" : "Out of Stock"} </span></h1>
             <h3>Product Weight: {product.weight} Oz</h3>
             <h3>Rating: {product.rating}</h3>
           </div>
