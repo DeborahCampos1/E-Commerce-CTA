@@ -7,6 +7,7 @@ import NewProductForm from "./Components/NewProductForm";
 import PageNotFound from "./Components/PageNotFound";
 import AllProducts from "./Components/AllProducts";
 import LogIn from "./Components/LogIn";
+import Cart from "./Components/Cart";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <main>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/products" element={<AllProducts />} />
         <Route path="/products/:id" element={<ProductDetails />}/>
         <Route path="/products/:id/edit" element={<EditProduct />}/>

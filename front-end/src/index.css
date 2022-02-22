@@ -30,6 +30,18 @@ main{
   color:rgb(255, 253, 240);
   border: 4px solid rgb(179, 189, 206);
 }
+.home a{
+    text-decoration: none;
+    display: flex;
+    color: rgb(22, 20, 20);
+    font-size: 0.75em;
+    padding:10px;
+    justify-content: center;
+}
+.home a:hover{
+  color:rgb(255, 253, 240);
+  border: 4px solid rgb(179, 189, 206);
+}
 .shimmer{
     font-family: "Lato";
     font-weight: 300;

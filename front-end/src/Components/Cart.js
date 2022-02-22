@@ -1,31 +1,17 @@
 import { useState , useEffect} from 'react';
-import { Link } from "react-router-dom";
+import currencyFormatter from "./Utility"
 
 
-function Cart ({products}){
-    const [cartContents, setcartContents] = useState(
-        {
-            subtotal: 0,
-            productPrice: 0,
-            productName: "",
-        }
-    )
+function Cart ({subtotal, itemName, itemCount}){
+    let totalprice = subtotal * 1.08;
 
-    // handleInput=(event )=>{
-    //     setcartContents(
-    //         {...cartContents, [event.target.id] : event.target.value }
-    //     )
-    // }
     return (
         <div>
-            {/* <h3> Cart Contents </h3> */}
-            <h3>Cart Subtotal: {cartContents.subtotal}</h3>
-            {/* <h4>Tax: {cartContents.subtotal * 0.08}</h4>
-            <h4>Total: {cartContents.subtotal * 1.08}</h4> */}
-            {/* <h4><Link to="/products"> Back to All Products</Link></h4> */}
-
+            <h3>Cart Subtotal: {currencyFormatter.format(subtotal)}</h3>
+            <h4>Tax: {currencyFormatter.format(subtotal * 0.08)}</h4>
+            <h3>Total Price: {currencyFormatter.format(totalprice)}</h3>
+            <h3>Item Name: {itemName} Count: {itemCount} </h3>
         </div>
-    
     )
 }
 export default Cart;
