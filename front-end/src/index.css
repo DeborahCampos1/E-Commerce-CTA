@@ -1,5 +1,7 @@
 body{ 
     background: linear-gradient( #b4a28de5, #9094ad);
+    font-family: "Garamond", cursive;
+    font-weight: 600;
 }
 main{
   width: 60%;
@@ -9,6 +11,9 @@ main{
   justify-content: center;
 }
 #nav{
+  
+    font-family: "Garamond", cursive;
+    font-weight: bold;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
