@@ -144,6 +144,18 @@ main{
     border: 0.20em solid rgb(46, 52, 58); 
     border-radius: 6px;
 }
+.buttons a{
+  color: rgb(33, 86, 179);
+}
+.checkout{
+  border: 1px solid rgb(114, 145, 199);
+}
+.checkout:hover{
+  border: 1px solid aliceblue;
+}
+.buttons a:hover{
+  color: black;
+}
 .details{
   text-align: center;
   margin-top:25px;

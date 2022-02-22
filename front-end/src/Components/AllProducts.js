@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Cart from "./Cart";
 import SelectOptions from "./Sort";
+import currencyFormatter from "./Utility"
+
 const API = process.env.REACT_APP_API_URL;
 
 function AllProducts() {
@@ -74,8 +76,9 @@ function AllProducts() {
     <div >
       <div className="buttons">
         <div><SelectOptions onChange={handleSort} /></div>
-          {!viewcart ? <Cart itemname={itemname} itemcount={itemcount} subtotal={subtotal}/> : null}
-         <div><button onClick={viewCart}>{!viewcart ? "Hide Cart" : "View Cart "}</button></div> 
+          {viewcart ? <Cart itemname={itemname} itemcount={itemcount} subtotal={subtotal}/> : <div><h2>Subtotal: {currencyFormatter.format(subtotal)}</h2>
+          <Link to=""><h3 className="checkout">Buy Now</h3></Link></div>}
+         <div><button onClick={viewCart}>{!viewcart ? "View Cart" : "Hide Cart "}</button></div> 
       </div>
       <hr></hr>
       <div className="Products">{productList}</div>
