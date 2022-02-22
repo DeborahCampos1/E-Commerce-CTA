@@ -3,7 +3,7 @@ const products = express.Router();
 const { getAllProducts, getOneProduct , createProduct, deleteProduct, updateProduct} = require("../queries/products.js");
 
 products.get("/", async (req,res)=>{
-
+    const { Featured , Low , High } = req.query;
     try{
         const allProducts = await getAllProducts();
         if(allProducts.length){
