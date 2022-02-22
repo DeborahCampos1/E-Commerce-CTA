@@ -73,11 +73,9 @@ function AllProducts() {
   return (
     <div >
       <div className="buttons">
-        <div>
-          <SelectOptions onChange={handleSort} />
-        </div>
-          {viewcart ? <Cart itemname={itemname} itemcount={itemcount} subtotal={subtotal}/> : null}
-          <button onClick={viewCart}>{!viewcart ? "View Cart" : "Hide Cart "}</button>
+        <div><SelectOptions onChange={handleSort} /></div>
+          {!viewcart ? <Cart itemname={itemname} itemcount={itemcount} subtotal={subtotal}/> : null}
+         <div><button onClick={viewCart}>{!viewcart ? "Hide Cart" : "View Cart "}</button></div> 
       </div>
       <hr></hr>
       <div className="Products">{productList}</div>
