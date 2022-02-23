@@ -12,7 +12,7 @@ main{
 }
 #nav{
   
-    font-family: "Garamond", cursive;
+    font-family: cursive;
     font-weight: bold;
     display: flex;
     flex-wrap: wrap;
@@ -22,7 +22,6 @@ main{
     align-items: center;
     padding: 0 1em;
     width: 75%;
-    /* margin: auto; */
     border: solid 25px #64615ee5;
 }
 #nav a{

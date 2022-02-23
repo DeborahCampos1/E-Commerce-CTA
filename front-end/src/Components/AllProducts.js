@@ -7,13 +7,15 @@ import currencyFormatter from "./Utility"
 
 const API = process.env.REACT_APP_API_URL;
 
-function AllProducts() {
+function AllProducts({getSubTotal}) {
+  
   const [products, setProducts] = useState([]);
   const [subtotal, setSubTotal]= useState(0);
   const [itemcount, setitemcount] = useState(0);
   const [viewcart, setviewCart] = useState(false);
   const [itemname, setitemName] = useState([]);
   const [optionvalue, setOptionValue] = useState("");
+  const [itemlist, setItemList] = useState([itemname])
 
   const handleSort = (e)=>{
       setOptionValue(e.target.value)
@@ -39,18 +41,28 @@ function AllProducts() {
       setitemcount(itemcount + 1)
       setSubTotal(subtotal + Number(e.target.value))
       setitemName([...itemname, e.target.id])
+      // if(!itemlist.includes(e.target.id)){
+        setItemList([...itemlist, e.target.id])
+      // }
+      console.log(itemlist)
   }
   const handleSubtract =(e) =>{
-        if(itemcount > 0 && itemname.includes(e.target.id)){
+        if(itemcount > 0 && itemlist.includes(e.target.id)){
+          for (let i=0; i< itemlist.length; i++){
+            if (itemlist[i]=== e.target.id){
+              itemlist.splice(i,1)
+            }
+          }
+          setItemList(itemlist)
           setitemcount(itemcount - 1)
           setSubTotal(subtotal - Number(e.target.value))
-          setitemName(itemname.pop(e.target.id))
         }
   }
   const viewCart =()=>{
     console.log(viewcart)
     setviewCart(!viewcart)
   }
+ getSubTotal(subtotal)
 
   let productList = products.map((product, index)=>{
     const formatPrice = (price) => `$${price.toFixed(2)}`
@@ -76,7 +88,7 @@ function AllProducts() {
     <div >
       <div className="buttons">
         <div><SelectOptions onChange={handleSort} /></div>
-          {viewcart ? <Cart itemname={itemname} itemcount={itemcount} subtotal={subtotal}/> : <div><h2>Subtotal: {currencyFormatter.format(subtotal)}</h2>
+          {viewcart ? <Cart itemlist={itemlist} itemname={itemname} itemcount={itemcount} subtotal={subtotal}/> : <div><h2>Subtotal: {currencyFormatter.format(subtotal)}</h2>
           <Link to=""><h3 className="checkout">Buy Now</h3></Link></div>}
          <div><button onClick={viewCart}>{!viewcart ? "View Cart" : "Hide Cart "}</button></div> 
       </div>

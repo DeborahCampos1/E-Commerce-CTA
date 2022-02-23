@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react"
 import Home from "./Components/Home";
 import NavBar from "./Components/NavBar";
 import ProductDetails from "./Components/ProductDetails";
@@ -10,15 +11,22 @@ import LogIn from "./Components/LogIn";
 import Cart from "./Components/Cart";
 
 function App() {
+  const[cartsub, getCartSub] = useState(0)
+
+  const getSubTotal = (cartsub)=>{
+    getCartSub(Number(cartsub))
+  }
+
+
   return (
     <Router>
       <NavBar />
       <main>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/products" element={<AllProducts />} />
-        <Route path="/products/:id" element={<ProductDetails />}/>
+        <Route path="/cart" element={<Cart cartsub={cartsub}/>} />
+        <Route path="/products" element={<AllProducts getSubTotal={getSubTotal}/>} />
+        <Route path="/products/:id" element={<ProductDetails getSubTotal={getSubTotal} cartsub={cartsub}/>}/>
         <Route path="/products/:id/edit" element={<EditProduct />}/>
         <Route path="/products/new" element={<NewProductForm />}/>
         <Route path="/login" element={<LogIn />} />

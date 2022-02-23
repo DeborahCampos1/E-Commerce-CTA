@@ -6,8 +6,9 @@ import Cart from "./Cart.js"
 
 const API = process.env.REACT_APP_API_URL;
 
-function ProductDetails() {
+function ProductDetails({cartsub, getSubTotal}) {
   const[product, setProduct] = useState({});
+  const[subdisplay, setSubDisplay] = useState(cartsub)
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -21,6 +22,10 @@ function ProductDetails() {
     })
   }, [id,navigate])
 
+  const handleAdd =() =>{
+    setSubDisplay(subdisplay + Number(product.price))
+  }
+
   const handleDelete =()=>{
     axios.delete(`${API}/products/${id}`)
     .then((res)=>{
@@ -29,13 +34,15 @@ function ProductDetails() {
       console.log(err)
     })
   }
+  getSubTotal(subdisplay)
 
     return (
       <article className="details">
+        <h1>Subtotal: {currencyFormatter.format(subdisplay)}</h1>
         <div className="detail">
           <h1>{product.description}</h1>
           <h1> Featured Product: {product.featured ? <span>⭐️</span> : "No" } | <span>{product.in_stock ? "In Stock" : "Out of Stock"} </span></h1>
-        <button>Add To Cart</button>
+        <button onClick={handleAdd}>Add To Cart</button>
         </div>
         <aside>
          
