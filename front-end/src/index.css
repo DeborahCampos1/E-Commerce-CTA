@@ -182,7 +182,8 @@ main{
   margin: auto;
   border-radius: 12px;
   border: 2px solid rgb(255, 253, 240);
-  width: 550px;
+  width: 375px;
+  height: 250px;
 }
 .details h2{
   color:black;

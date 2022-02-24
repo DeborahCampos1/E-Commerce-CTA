@@ -13,7 +13,7 @@ function AllProducts({getSubTotal}) {
   const [subtotal, setSubTotal]= useState(0);
   const [itemcount, setitemcount] = useState(0);
   const [viewcart, setviewCart] = useState(false);
-  // const [itemname, setitemName] = useState([]);
+  const [itemname, setitemName] = useState([]);
   const [optionvalue, setOptionValue] = useState("");
   const [itemlist, setItemList] = useState([])
 
@@ -42,7 +42,7 @@ function AllProducts({getSubTotal}) {
       setSubTotal(subtotal + Number(e.target.value))
       setitemName([...itemname, e.target.id])
       // if(!itemlist.includes(e.target.id)){
-        setItemList([...itemlist, e.target.id])
+        // setItemList([...itemlist, e.target.id])
       // }
       console.log(itemlist)
   }
