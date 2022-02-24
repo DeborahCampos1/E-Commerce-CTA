@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import currencyFormatter from "./Utility";
-import Cart from "./Cart.js"
+// import Cart from "./Cart.js"
 
 const API = process.env.REACT_APP_API_URL;
 

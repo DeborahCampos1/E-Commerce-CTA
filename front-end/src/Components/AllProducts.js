@@ -13,9 +13,9 @@ function AllProducts({getSubTotal}) {
   const [subtotal, setSubTotal]= useState(0);
   const [itemcount, setitemcount] = useState(0);
   const [viewcart, setviewCart] = useState(false);
-  const [itemname, setitemName] = useState([]);
+  // const [itemname, setitemName] = useState([]);
   const [optionvalue, setOptionValue] = useState("");
-  const [itemlist, setItemList] = useState([itemname])
+  const [itemlist, setItemList] = useState([])
 
   const handleSort = (e)=>{
       setOptionValue(e.target.value)
@@ -59,9 +59,9 @@ function AllProducts({getSubTotal}) {
         }
   }
   const viewCart =()=>{
-    console.log(viewcart)
     setviewCart(!viewcart)
   }
+
  getSubTotal(subtotal)
 
   let productList = products.map((product, index)=>{
@@ -77,7 +77,7 @@ function AllProducts({getSubTotal}) {
           <img src={product.image} alt={product.name}></img>
           <h3>{formatPrice(product.price)}</h3> 
         </article>
-          <span><button id={product.description} value={product.price} onClick={handleSubtract} className="Cart">Remove Item</button></span>
+          <span><button id={product.description} value={product.price} onClick={handleSubtract} className="Cart">Remove From Cart</button></span>
         <hr></hr>
       </div>
     )
