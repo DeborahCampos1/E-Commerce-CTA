@@ -41,10 +41,6 @@ function AllProducts({getSubTotal}) {
       setitemcount(itemcount + 1)
       setSubTotal(subtotal + Number(e.target.value))
       setitemName([...itemname, e.target.id])
-      // if(!itemlist.includes(e.target.id)){
-        // setItemList([...itemlist, e.target.id])
-      // }
-      console.log(itemlist)
   }
   const handleSubtract =(e) =>{
         if(itemcount > 0 && itemlist.includes(e.target.id)){
