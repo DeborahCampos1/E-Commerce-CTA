@@ -1,5 +1,3 @@
-\c cta_dev;
-
 INSERT INTO products (name, description, image, weight, price, rating, featured, in_stock) VALUES
 ('1 oz Coin', 'American Gold Buffalo', 'https://online.kitco.com/products/1_oz_Gold_American_Buffalo_Coin_9999_2460/enu-1-oz-Gold-American-Buffalo-Coin-9999-2460-20000-2.jpg', 1, 2000,5, false, true),
 ('1 oz Coin', 'American Gold Eagle', 'https://online.kitco.com/products/1_oz_Gold_American_Eagle_Coin_9167_3000/enu-1-oz-Gold-American-Eagle-Coin-9167-3000-40000-2.jpg', 1, 2005, 4, true, true),
