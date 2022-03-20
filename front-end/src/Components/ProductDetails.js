@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import currencyFormatter from "./Utility";
-// import Cart from "./Cart.js"
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -38,6 +37,7 @@ function ProductDetails({cartsub, getSubTotal}) {
 
     return (
       <article className="details">
+        {/* <Buttons /> */}
         <h1>Subtotal: {currencyFormatter.format(subdisplay)}</h1>
         <div className="detail">
           <h1>{product.description}</h1>
