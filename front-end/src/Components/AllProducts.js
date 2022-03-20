@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Cart from "./Cart";
-import currencyFormatter from "./Utility"
+import { currencyFormatter } from "./Utility"
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -24,9 +24,10 @@ function AllProducts({getSubTotal}) {
         }).catch((err)=>{
           console.log(err)
         })
-  }, [optionvalue]);
+  }, []);
 
   let featured = products.filter((product) => product.featured);
+  let processedProducts = products
   
   const handleSort = (e)=>{
       setOptionValue(e.target.value)
@@ -38,11 +39,10 @@ function AllProducts({getSubTotal}) {
   } if (optionvalue === "pricehigh"){
     products.sort((a,b)=> b.price - a.price)
   } if(optionvalue === "featured"){
-    console.log(featured)
-    // setProducts(featured)
+    processedProducts = featured
   }
    
-    console.log(products)
+  console.log(processedProducts)
   
 
   const handleAdd =(e) =>{
@@ -68,8 +68,7 @@ function AllProducts({getSubTotal}) {
 
  getSubTotal(subtotal)
 
-  let productList = products.map((product, index)=>{
-    const formatPrice = (price) => `$${price.toFixed(2)}`
+  let productList = processedProducts.map((product, index)=>{
     return (
       <div key={index}>
         <div className="description">
@@ -79,7 +78,7 @@ function AllProducts({getSubTotal}) {
         <article key={index} className="Product" >
           <h3>{product.name}</h3>
           <img src={product.image} alt={product.name}></img>
-          <h3>{formatPrice(product.price)}</h3> 
+          <h3>{currencyFormatter.format(product.price)}</h3> 
         </article>
           <span><button id={product.description} value={product.price} onClick={handleSubtract} className="Cart">Remove From Cart</button></span>
         <hr></hr>
@@ -92,19 +91,18 @@ function AllProducts({getSubTotal}) {
   return (
     <div>
       <div className="buttons">
-      <form >
-                <label htmlFor="sort_product"><h3>Sort Product By:  </h3></label>
-                <select onChange={handleSort} name="selectList" id="selectList">
-                  <option>---Sort---</option>
-                    <option value="pricehigh">{options[0]}</option>
-                    <option value="pricelow">{options[1]}</option>
-                    <option value="featured">{options[2]}</option>
-                </select>
-            </form>
-        {/* <div><SelectOptions onChange={handleSort} /></div> */}
-          {viewcart ? <Cart itemlist={itemlist} itemname={itemname} itemcount={itemcount} subtotal={subtotal}/> : <div><h2>Subtotal: {currencyFormatter.format(subtotal)}</h2>
-          <Link to=""><h3 className="checkout">Buy Now</h3></Link></div>}
-         <div><button onClick={viewCart}>{!viewcart ? "View Cart" : "Hide Cart "}</button></div> 
+        <form >
+            <label htmlFor="sort_product"><h3>Sort Product By:  </h3></label>
+            <select onChange={handleSort} name="selectList" id="selectList">
+                <option>---Sort---</option>
+                <option value="pricehigh">{options[0]}</option>
+                <option value="pricelow">{options[1]}</option>
+                <option value="featured">{options[2]}</option>
+            </select>
+        </form>
+        {viewcart ? <Cart itemlist={itemlist} itemname={itemname} itemcount={itemcount} subtotal={subtotal}/> : <div><h2>Subtotal: {currencyFormatter.format(subtotal)}</h2>
+        <Link to=""><h3 className="checkout">Buy Now</h3></Link></div>}
+        <div><button onClick={viewCart}>{!viewcart ? "View Cart" : "Hide Cart "}</button></div> 
       </div>
       <hr></hr>
       <div className="Products">{productList}</div>

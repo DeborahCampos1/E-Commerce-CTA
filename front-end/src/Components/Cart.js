@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import currencyFormatter from "./Utility"
+import { currencyFormatter } from "./Utility"
 
 
 function Cart ({subtotal, itemname, itemcount, cartsub, itemlist}){
