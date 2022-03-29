@@ -14,6 +14,7 @@ function AllProducts({getSubTotal}) {
   const [viewcart, setviewCart] = useState(false);
   const [itemname, setitemName] = useState([]);
   const [optionvalue, setOptionValue] = useState("");
+  // const [ratingInput, setRatingInput] = useState(0)
   const [itemlist, setItemList] = useState([])
 
   useEffect(() => {
@@ -26,8 +27,16 @@ function AllProducts({getSubTotal}) {
         })
   }, []);
 
+  // let rated = products.filter((product)=> product.rating === ratingInput)
+
   let featured = products.filter((product) => product.featured);
+  let inStock = products.filter((product) => product.in_stock);
   let processedProducts = products
+
+  // const handleratingInput = (e) =>{
+  //   setRatingInput(e.target.value)
+  // }
+  // switch statement for rating
   
   const handleSort = (e)=>{
       setOptionValue(e.target.value)
@@ -36,10 +45,12 @@ function AllProducts({getSubTotal}) {
 
   if(optionvalue === "pricelow"){
     products.sort((a,b)=> a.price - b.price);
-  } if (optionvalue === "pricehigh"){
+  } if(optionvalue === "pricehigh"){
     products.sort((a,b)=> b.price - a.price)
   } if(optionvalue === "featured"){
     processedProducts = featured
+  } if(optionvalue === "instock"){
+    processedProducts = inStock
   }
    
   console.log(processedProducts)
@@ -86,18 +97,22 @@ function AllProducts({getSubTotal}) {
     )
   })
   
-  let options = [" Price High-Low ", " Price Low-High", " Featured Product"]
+  let options = [" Price High-Low ", " Price Low-High", " Featured Product", "In-Stock"]
 
   return (
     <div>
       <div className="buttons">
         <form >
+            {/* <label htmlFor="rating-input">Search By Rating: </label>
+            <input id="rating-input" value={ratingInput} onChange={handleratingInput}/> */}
+
             <label htmlFor="sort_product"><h3>Sort Product By:  </h3></label>
             <select onChange={handleSort} name="selectList" id="selectList">
                 <option>---Sort---</option>
                 <option value="pricehigh">{options[0]}</option>
                 <option value="pricelow">{options[1]}</option>
                 <option value="featured">{options[2]}</option>
+                <option value="instock">{options[3]}</option>
             </select>
         </form>
         {viewcart ? <Cart itemlist={itemlist} itemname={itemname} itemcount={itemcount} subtotal={subtotal}/> : <div><h2>Subtotal: {currencyFormatter.format(subtotal)}</h2>
