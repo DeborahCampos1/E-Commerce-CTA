@@ -42,7 +42,12 @@ function NewProduct() {
   const handleSubmit = (e)=>{
     e.preventDefault()
 
-    addProduct(product)
+    if(!/[A-Za-z]/.test(product.name) || !/[A-Za-z]/.test(product.description) ){
+      alert ("Please enter a valid Name & Description of product. For more help, please see our FAQ page.")
+      return;
+    } else {
+      addProduct(product)
+    }
   }
 
 

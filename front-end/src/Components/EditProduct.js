@@ -41,6 +41,10 @@ function EditProduct() {
   const handleSubmit = (event) =>{
     event.preventDefault();
     
+    if(!/[A-Za-z]/.test(product.name) || !/[A-Za-z]/.test(product.description) ){
+      alert ("Please enter a valid Name & Description. For more help, please see our FAQ page.")
+      return;
+  }
     axios.put(`${API}/products/${id}`, product)
     .then(()=>{
       navigate("/products")
