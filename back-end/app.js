@@ -10,12 +10,12 @@ app.use(express.json()); // Parse incoming JSON
 
 // ROUTES
 app.get("/", (req, res) => {
-  res.send("Welcome to the Precious Metals Store!");
+  res.sendStatus("Welcome to the Precious Metals Store!");
 });
 app.use("/products", productsController);
 
 app.get("*", (req,res)=>{
-  req.status(404).json({error: "Page Not Found"})
+  res.sendStatus(404).json({error: "Page Not Found"})
 });
 
 module.exports = app;

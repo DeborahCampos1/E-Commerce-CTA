@@ -33,10 +33,10 @@ products.get("/:id", async (req,res)=>{
 products.post("/", async (req,res)=>{
     let { body } = req;
 
-    // if(!/[A-Za-z]/.test(body.name)){
-    //     res.status("Name must include letters")
-    //     return;
-    // }
+    if(!/[A-Za-z]/.test(body.name)){
+        res.send("Name must include letters")
+        return;
+    }
 
     try{
         const newProduct = await createProduct(body);
@@ -53,6 +53,11 @@ products.post("/", async (req,res)=>{
 products.put("/:id", async (req,res)=>{
     const { id } = req.params;
     const { body } = req;
+
+    if(!/[A-Za-z]/.test(body.name)){
+        res.send("Name must include letters")
+        return;
+    }
 
     try{
         const uProduct = await updateProduct(id, body);
