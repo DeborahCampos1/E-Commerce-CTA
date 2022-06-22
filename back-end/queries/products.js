@@ -19,6 +19,7 @@ const getOneProduct = async (id) =>{
 }
 
 const createProduct = async (product) =>{
+
     try{
         const newProduct = await db.one(
             "INSERT INTO products(name, description, image, weight, price, rating, featured, in_stock) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *",

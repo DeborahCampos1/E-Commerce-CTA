@@ -33,6 +33,11 @@ products.get("/:id", async (req,res)=>{
 products.post("/", async (req,res)=>{
     let { body } = req;
 
+    // if(!/[A-Za-z]/.test(body.name)){
+    //     res.status("Name must include letters")
+    //     return;
+    // }
+
     try{
         const newProduct = await createProduct(body);
         if(newProduct.id){
