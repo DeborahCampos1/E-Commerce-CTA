@@ -4,6 +4,7 @@ const { getAllProducts, getOneProduct , createProduct, deleteProduct, updateProd
 
 products.get("/", async (req,res)=>{
     const { Featured , Low , High } = req.query;
+
     try{
         const allProducts = await getAllProducts();
         if(allProducts.length){
@@ -18,6 +19,12 @@ products.get("/", async (req,res)=>{
 
 products.get("/:id", async (req,res)=>{
     const { id } = req.params;
+    
+    if(!/[0-9]/.test(id)){
+        res.send("Product ID must be a number")
+        return;
+    }
+
     try{
         const product = await getOneProduct(id);
         if(product.id){
