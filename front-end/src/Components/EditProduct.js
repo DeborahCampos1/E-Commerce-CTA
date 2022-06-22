@@ -84,6 +84,7 @@ function EditProduct() {
           id="weight"
           value={product.weight}
           type="number"
+          min="1"
           onChange={handleInputChange}
           placeholder="Item weight"
           required
@@ -91,6 +92,7 @@ function EditProduct() {
           <label htmlFor="price"><h2>Price: </h2></label>
           <input
           id="price"
+          min="250"
           value={product.price}
           type="number"
           onChange={handleInputChange}

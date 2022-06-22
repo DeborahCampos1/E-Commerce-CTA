@@ -21,6 +21,7 @@ function AllProducts({getSubTotal}) {
     axios
       .get(`${API}/products`)
       .then((res) => {
+        console.log(res.data)
           setProducts(res.data);
         }).catch((err)=>{
           console.log(err)

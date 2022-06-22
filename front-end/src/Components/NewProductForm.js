@@ -81,6 +81,7 @@ function NewProduct() {
         id="weight"
         value={product.weight}
         type="number"
+        min="1"
         onChange={handleInputChange}
         placeholder="Item weight"
         required
@@ -90,6 +91,8 @@ function NewProduct() {
         id="price"
         value={product.price}
         type="number"
+        min="250"
+        max="10,000"
         onChange={handleInputChange}
         placeholder="Product price"
         required
