@@ -11,7 +11,7 @@ function Cart ({subtotal, itemname, itemcount, cartsub, itemlist}){
             <h4>Tax: {currencyFormatter.format(subtotal * 0.08)}</h4>
             <hr></hr>
             <h2>Total Price: {currencyFormatter.format(totalprice)}</h2>
-            <li> Product Count: {itemcount} </li>
+            <li> Product Count: {itemlist} </li>
             <Link to=""><h3>Buy Now</h3></Link>
         </div>
     )

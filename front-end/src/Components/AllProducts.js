@@ -37,7 +37,7 @@ function AllProducts({getSubTotal}) {
   // const handleratingInput = (e) =>{
   //   setRatingInput(e.target.value)
   // }
-  // switch statement for rating
+  // switch statement for rating?
   
   const handleSort = (e)=>{
       setOptionValue(e.target.value)
@@ -61,6 +61,7 @@ function AllProducts({getSubTotal}) {
       setitemcount(itemcount + 1)
       setSubTotal(subtotal + Number(e.target.value))
       setitemName([...itemname, e.target.id])
+      setItemList([...{itemcount: itemname}])
   }
   const handleSubtract =(e) =>{
         if(itemcount > 0 && itemlist.includes(e.target.id)){
