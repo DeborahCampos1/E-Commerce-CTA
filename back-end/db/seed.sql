@@ -9,7 +9,10 @@ INSERT INTO products (name, description, image, weight, price, rating, featured,
 ('1 oz Bar', 'Platinum Valcambi Suisse', 'https://online.kitco.com/products/1-oz-Platinum-Valcambi-Suisse-Bar-9995-1017V/enu-1-oz-Platinum-Valcambi-Suisse-Bar-9995-1017V-40000-2.jpg', 1, 1197, 5, false, true),
 ('25 oz Coins', 'Silver Maple Leaf Coins (25 pcs)', 'https://online.kitco.com/products/2022-1-oz-Silver-Maple-Leaf-Tube-25-coins-MintFirst-3104MFT2022/enu-2022-1-oz-Silver-Maple-Leaf-Tube-25-coins-MintFirst-3104MFT2022-50000-2.jpg', 25, 790, 5, true, true);
 
-INSERT INTO users (first_name, last_name, email, telephone) VALUES
-('Amanda', 'Nunez', '123123@example.com', 123456789),
-('User', 'Two', 'email@etest.com', 689754123),
-('Test', 'User', 'email2@example.com', 4567890123);
+INSERT INTO users (first_name, last_name, email) VALUES
+('Amanda', 'Nunez', '123123@example.com'),
+('User', 'Two', 'email@etest.com'),
+('Test', 'User', 'email2@example.com');
+
+INSERT INTO Cart_activity(user_id, product_id, quantity, created_at, updated_at, deleted_at) VALUES
+(1,2,3,'1999-01-08 04:05:06', '10/22/2017 10:00', '10/22/2017 10:30');

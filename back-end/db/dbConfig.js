@@ -23,5 +23,6 @@ const cn = DATABASE_URL
     
     db.any("SELECT * FROM products;").then((data)=>console.log(data))
     db.any("SELECT * FROM users;").then((data)=>console.log(data))
-    
+    db.any("SELECT * FROM Cart_activity;").then((data)=>console.log(data))
+
 module.exports = db;

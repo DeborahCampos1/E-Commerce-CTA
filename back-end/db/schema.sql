@@ -32,5 +32,11 @@ CREATE TABLE users (
 DROP TABLE IF EXISTS Cart_activity;
 
 CREATE TABLE Cart_activity (
-    
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    product_id INTEGER REFERENCES products(id),
+    quantity INTEGER,
+    created_at timestamp,
+    updated_at timestamp,
+    deleted_at timestamp
 );

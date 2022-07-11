@@ -22,10 +22,9 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
     id INTEGER ,
-    first_name varchar NOT NULL UNIQUE,
-    last_name varchar NOT NULL UNIQUE,
+    first_name varchar NOT NULL,
+    last_name varchar NOT NULL,
     email TEXT NOT NULL,
-    telephone INTEGER,
     created_at timestamp,
     modified_at timestamp
 );
