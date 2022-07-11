@@ -1,4 +1,7 @@
 DROP DATABASE IF EXISTS cta_dev;
+CREATE DATABASE cta_dev;
+
+\c cta_dev;
 
 DROP TABLE IF EXISTS products;
 
@@ -15,3 +18,20 @@ CREATE TABLE products (
     in_stock BOOLEAN
 );
 
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+    id INTEGER ,
+    first_name varchar NOT NULL UNIQUE,
+    last_name varchar NOT NULL UNIQUE,
+    email TEXT NOT NULL,
+    telephone INTEGER,
+    created_at timestamp,
+    modified_at timestamp
+);
+
+DROP TABLE IF EXISTS Cart_activity;
+
+CREATE TABLE Cart_activity (
+    
+);

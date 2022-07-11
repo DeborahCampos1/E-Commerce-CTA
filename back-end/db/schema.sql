@@ -21,11 +21,10 @@ CREATE TABLE products (
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
-    id INTEGER ,
+    id SERIAL PRIMARY KEY,
     first_name varchar NOT NULL UNIQUE,
     last_name varchar NOT NULL UNIQUE,
     email TEXT NOT NULL,
-    telephone INTEGER,
     created_at timestamp,
     modified_at timestamp
 );

@@ -19,7 +19,9 @@ const cn = DATABASE_URL
       database: PG_DATABASE,
       user: PG_USER,
     };
-
-const db = pgp(cn);
-
+    const db = pgp(cn);
+    
+    db.any("SELECT * FROM products;").then((data)=>console.log(data))
+    db.any("SELECT * FROM users;").then((data)=>console.log(data))
+    
 module.exports = db;
