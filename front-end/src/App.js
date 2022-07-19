@@ -9,6 +9,7 @@ import PageNotFound from "./Components/PageNotFound";
 import AllProducts from "./Components/AllProducts";
 import LogIn from "./Components/LogIn";
 import Cart from "./Components/Cart";
+import Register from "./Register";
 
 function App() {
   const[cartsub, getCartSub] = useState(0)
@@ -30,6 +31,7 @@ function App() {
         <Route path="/products/:id/edit" element={<EditProduct />}/>
         <Route path="/products/new" element={<NewProductForm />}/>
         <Route path="/login" element={<LogIn />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/*" element={<PageNotFound />}/>
       </Routes>
       </main>
