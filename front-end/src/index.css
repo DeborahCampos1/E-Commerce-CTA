@@ -127,11 +127,12 @@ main{
     margin-bottom: 75px;
 }
 .Product{
-    border: solid 1px rgb(255, 253, 240);
+    /* border: solid 1px rgb(29, 26, 10); */
     border-radius: 12px;
     padding: 2px;
     gap: 1px;
     background-color: rgb(179, 189, 206);
+    filter: drop-shadow(0 0 0.25rem rgb(127, 111, 97));
 }
 .buttons{
     display: flex;
@@ -280,4 +281,44 @@ h2 a:hover{
   height: 25px;
   text-align: center;
   margin: auto;
+}
+.Cart {
+  padding: 5px;
+  margin: 5px;
+}
+#registration{
+  margin: 15px;
+  width: 450px;
+  height: 500px;
+  background-color: rgb(183, 170, 153);
+  overflow:scroll;
+}
+#registration h1{
+  text-align: center;
+}
+.registration-container{
+  padding: 5px 25px;
+  margin: auto 0;
+}
+.register-icons{
+  padding: 0px 3px 0px 8px;
+}
+#username{
+  margin-bottom: 10px
+}
+#password{
+  margin-bottom: 10px;
+}
+#confirm_pwd{
+  margin-bottom: 20px;
+}
+.registration-button{
+  height: 40px;
+  width: 100px;
+  text-align: center;
+}
+.button-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
